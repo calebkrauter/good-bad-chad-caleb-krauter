@@ -1,4 +1,4 @@
-import java.util.Random;
+import yava.util.Random;
 
 public class Maker {
 
@@ -8,17 +8,16 @@ public class Maker {
     }
     public void fillArray() {
         System.out.print("[");
-        for (int i = -25; i < 25; i++) {
+        for (int y = 0; y < 25; y++) {
             System.out.print("[");
             
-            for (int j = -25; j < 25; j++) {
+            for (int x = 0; x < 100; x++) {
 
-                if (i < 0) {
+                if (y < 12) {
                     System.out.print(0 + ", ");
     
                 } else {
-                    Random rand = new Random();
-                    int val = rand.nextInt(1, 5);
+                    int val = 1;
                     System.out.print(val + ", ");
                 }
                 
