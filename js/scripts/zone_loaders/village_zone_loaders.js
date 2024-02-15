@@ -410,14 +410,14 @@ const loadVillageMain = () => {
         GAME.addEntity(new Mayor(Vector.blockToWorldSpace(blockPosMayor), new Conversation(getAllConversationArrays().playground.papaChad.testNoChoices)), 0);
 
         BG_COLOR = COLORS.SKY_BLUE;
-        let makeRain = false;
+        let makeRain = true;
 
         // makeRain = Math.random() < .4 ? true : false;
         // let hot = Math.random() < .9 ? true : false;
         // let makeClouds = Math.random() < .7 ? true : false;
         let dir = ["left", "down", "right", "down", "down"];
         let rainStrength = [2, 5, 10, 20, 25, 30];
-        let strengthIndex = 5;
+        let strengthIndex = 1;
         let dirIndex = Math.floor(Math.random() * dir.length);
         let cloudNum = (Math.random() * (8 + 20)) - 3;
         let randomOrigin = (Math.random() * (0 + 100)) - 0;

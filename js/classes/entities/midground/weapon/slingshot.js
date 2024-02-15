@@ -18,7 +18,7 @@ class Slingshot {
         this.start = new Vector(0, 0);
     }
 
-    aim() { 
+    aim() {
         this.isHidden = false;
 
         // play the slingshot stretch sound
@@ -52,7 +52,7 @@ class Slingshot {
 
     fire() {
         ASSET_MGR.stopAudio(SFX.SLINGSHOT_STRETCH.path);
-        
+
         // choose from 4 different firing sounds
         const rand = Math.floor(Math.random() * 4) + 1;
         const sfx = SFX["SLINGSHOT_LAUNCH" + rand];

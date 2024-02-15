@@ -376,67 +376,67 @@ class Chad {
 
         this.animations["right"]["idle"] = new Animator(
             Chad.SPRITESHEET,
-            new Vector(0, 0),
+            new Vector(1, 0),
             Chad.SIZE,
             1, 1);
         this.animations["left"]["idle"] = new Animator(
             Chad.SPRITESHEET,
-            new Vector(0, Chad.SIZE.y),
+            new Vector(1, Chad.SIZE.y),
             Chad.SIZE,
             1, 1);
 
         this.animations["right"]["walking"] = new Animator(
             Chad.SPRITESHEET,
-            new Vector(0, 0),
+            new Vector(1, 0),
             Chad.SIZE,
             31, 1 / 10);
         this.animations["left"]["walking"] = new Animator(
             Chad.SPRITESHEET,
-            new Vector(96, 64),
+            new Vector(97, 64),
             Chad.SIZE,
             31, 1 / 10);
         this.animations["right"]["running"] = new Animator(
             Chad.SPRITESHEET,
-            new Vector(0, 0),
+            new Vector(1, 0),
             Chad.SIZE,
             31, 1 / 10);
         this.animations["left"]["running"] = new Animator(
             Chad.SPRITESHEET,
-            new Vector(96, 64),
+            new Vector(97, 64),
             Chad.SIZE,
             31, 1 / 10);
 
         this.animations["right"]["dashing"] = new Animator(
             Chad.SPRITESHEET,
-            new Vector(32, 1600),
+            new Vector(33, 1600),
             Chad.SIZE,
             1, 1);
         this.animations["left"]["dashing"] = new Animator(
             Chad.SPRITESHEET,
-            new Vector(144, 1600),
+            new Vector(145, 1600),
             Chad.SIZE,
             1, 1);
 
         this.animations["right"]["jumping"] = new Animator(
             Chad.SPRITESHEET,
-            new Vector(0, 1664),
+            new Vector(1, 1664),
             Chad.SIZE,
             1, 1);
         this.animations["left"]["jumping"] = new Animator(
             Chad.SPRITESHEET,
-            new Vector(96, 1664),
+            new Vector(97, 1664),
             Chad.SIZE,
             1, 1);
         this.animations["right"]["slicing"] = new Animator(
             Chad.SPRITESHEET,
-            new Vector(0, 128),
+            new Vector(1, 128),
             Chad.SIZE,
-            32, 1 / 20);
+            32, 1 / 10);
         this.animations["left"]["slicing"] = new Animator(
             Chad.SPRITESHEET,
             new Vector(
-                0, 192),
+                1, 192),
             Chad.SIZE,
-            32, 1 / 20);
+            32, 1 / 10);
     };
 };
