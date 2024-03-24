@@ -111,8 +111,19 @@ class Hud {
 
         // add slingshot ammo hotbar
         const hotbarItemWidth = ItemLabel.DEFAULT_SIZE.x;
+        const hotbarItemHeight = ItemLabel.DEFAULT_SIZE.y;
         const hotbarXStart = (Camera.SIZE.x - hotbarItemWidth * 5) / 2 - 100;
         const hotbarY = Camera.SIZE.y - ItemLabel.DEFAULT_SIZE.y - Hud.MARGIN;
+        const hotbarItemCount = 7;
+
+        // add ammo related things
+        this.addComponent("hotBarRectangle", new HotBarRectangle(
+            hotbarXStart - HotBarRectangle.PADDING, 
+            hotbarY - HotBarRectangle.PADDING, 
+            ((hotbarItemWidth + 4) * hotbarItemCount) + 2 * HotBarRectangle.PADDING,
+            hotbarItemHeight + 2 * HotBarRectangle.PADDING
+        ));
+
         this.addComponent("ammoRockLabel", new AmmoLabel(
             new Vector(hotbarXStart, hotbarY),
             AmmoItem.ROCK,
@@ -442,6 +453,37 @@ class ItemLabel {
             CTX.fillText(text, this.pos.x + this.size.x - ItemLabel.TEXT_MARGIN - CTX.measureText(text).width,
                 this.pos.y + this.size.y - ItemLabel.TEXT_MARGIN);
         }
+    }
+}
+
+class HotBarRectangle {
+    /**
+     * Constructor for a HotBarRectangle.
+     * 
+     * @param {number} x the x-coordinate of the HotBarRectangle on the canvas
+     * @param {number} y the y-coordinate of the HotBarRectangle on the canvas
+     * @param {number} width the width of the HotBarRectangle on the canvas
+     * @param {number} height the height of the HotBarRectangle on the canvas
+     */
+    constructor(x, y, width, height) {
+        this.x = x;
+        this.y = y;
+        this.width = width;
+        this.height = height;
+    }
+
+    static get PADDING() {
+        return 0;
+    }
+
+    update() {
+
+    }
+
+    draw() {
+        CTX.fillStyle = COLORS.LIGHT_GRAY;
+        CTX.lineWidth = 5;
+        CTX.strokeRect(this.x, this.y, this.width, this.height);
     }
 }
 

@@ -94,4 +94,33 @@ class FlyingEnemyBase {
             this.path[this.target], this.enemy.pos)), this.enemy.speed * GAME.clockTick);
         this.enemy.pos = Vector.add(this.enemy.pos, velocity);
     }
+
+
+
+    // presets for paths
+
+    static get STRAIGHT_LINE() {
+        return [new Vector(0, 0), new Vector(400, 0)];
+    }
+
+    static get ZIG_ZAG() {
+        return [new Vector(0, 0), new Vector(200, 200), new Vector(400, 0), new Vector(200, -200), new Vector(0, 0)];
+    }
+
+    static get SINE_WAVE() {
+        return [new Vector(0, 0), new Vector(200, 200), new Vector(400, 0), new Vector(600, -200), new Vector(800, 0)];
+    }
+
+    static get CIRCLE() {
+        return [new Vector(0, 0), new Vector(200, 200), new Vector(400, 0), new Vector(200, -200), new Vector(0, 0)];
+    }
+
+    static get UP_AND_DOWN() {
+        return [new Vector(0, 0), new Vector(0, 200), new Vector(0, 0)];
+    }
+
+    static get LEFT_AND_RIGHT() {
+        return [new Vector(0, 0), new Vector(200, 0), new Vector(0, 0)];
+    }
+
 }

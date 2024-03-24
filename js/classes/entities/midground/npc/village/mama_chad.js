@@ -59,19 +59,22 @@ class MamaChad {
                 }
             }
         }
+
+        if (this.action != "trapped") {
         
-        // Set the velocity, according to gravity.
-        this.velocity = {
-            x: this.velocity.x,
-            y: this.velocity.y += PHYSICS.GRAVITY_ACC * GAME.clockTick
-        };
+            // Set the velocity, according to gravity.
+            this.velocity = {
+                x: this.velocity.x,
+                y: this.velocity.y += PHYSICS.GRAVITY_ACC * GAME.clockTick
+            };
 
-        this.lastBoundingBox = this.boundingBox;
+            this.lastBoundingBox = this.boundingBox;
 
-        this.pos = {
-            x: this.pos.x,
-            y: this.pos.y + this.velocity.y * GAME.clockTick
-        };
+            this.pos = {
+                x: this.pos.x,
+                y: this.pos.y + this.velocity.y * GAME.clockTick
+            };
+        }
 
         this.boundingBox = new BoundingBox(this.pos, PapaChad.SCALED_SIZE);
 

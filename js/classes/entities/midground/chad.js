@@ -114,7 +114,7 @@ class Chad {
 
     /** The delay between dashes in seconds. */
     static get DASH_COOLDOWN() {
-        return 1.5;
+        return 1.3;
     }
 
     /** The maximum amount of health Chad can have. */
@@ -692,6 +692,11 @@ class Chad {
             if (this.pos.y > Vector.blockToWorldSpace(new Vector(0, 28)).y) {
                 this.takeDamage(this.maxHealth);
             }
+        }
+
+        // Step 7: Check general zone conditions
+        if (this.pos.y > Vector.blockToWorldSpace(new Vector(0, 75)).y) {
+            this.takeDamage(this.maxHealth);
         }
     };
 

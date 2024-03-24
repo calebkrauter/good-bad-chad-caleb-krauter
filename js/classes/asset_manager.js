@@ -146,14 +146,14 @@ class AssetManager {
      * @param {number} volume The volume to which you want to set the audio.
      */
     playMusic(path, volume, loop = true) {
-        console.log("Playing music: " + path);
+        // console.log("Playing music: " + path);
         if (this.currentMusic) {
             this.currentMusic.pause();
             this.currentMusic.currentTime = 0;
         }
 
         const audio = this.cache[path];
-        console.log(audio);
+        // console.log(audio);
         audio.currentTime = 0;
         audio.volume = volume;
         this.currentMusic = audio;
@@ -204,7 +204,7 @@ class AssetManager {
      * @param {string} path The filepath of the audio you are trying to stop.
      */
     stopAudio(path) {
-        console.log("Stopped audio: " + path);
+        // console.log("Stopped audio: " + path);
         const audio = this.cache[path];
         audio.pause();
         audio.currentTime = 0;
@@ -331,6 +331,7 @@ class AssetManager {
 
 
             //TEMPORARY
+            SFX.SLIME_ATTACK.path,
             SFX.GROWL1.path,
             SFX.GROWL2.path,
             SFX.SMASH1.path,

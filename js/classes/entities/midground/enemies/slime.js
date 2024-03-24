@@ -120,13 +120,13 @@ class Slime {
         const pos = Vector.add(this.base.getCenter(), new Vector(0, -40));
 
         const rand = Math.random();
-        if (rand < 0.3) {
+        if (rand < 0.4) {
             if (this.type === Slime.FROST) {
                 GAME.addEntity(new AmmoDrop(pos, AmmoDrop.SNOWBALL, 2));
             } else {
                 GAME.addEntity(new AmmoDrop(pos, AmmoDrop.SLIMEBALL, 1));
             }
-        } else if (rand < 0.5) {
+        } else if (rand < 0.7) {
             if (this.type === Slime.FROST) {
                 GAME.addEntity(new AmmoDrop(pos, AmmoDrop.SUS_SNOWBALL, 2));
             } else {
@@ -147,6 +147,7 @@ class Slime {
 
                 this.lastAttack = Date.now();
                 CHAD.takeDamage(Slime.ATTACK_DAMAGE);
+                ASSET_MGR.playSFX(SFX.SLIME_ATTACK.path, SFX.SLIME_ATTACK.volume);
             }
         } else if (deathAnim.currentFrame() === deathAnim.frameCount - 1) {
             this.removeFromWorld = true;

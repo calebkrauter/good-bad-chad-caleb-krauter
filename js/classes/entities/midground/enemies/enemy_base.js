@@ -36,6 +36,7 @@ class EnemyBase {
         enemy.getCenter = () => this.getCenter(); // re-direct any references towards the enemy's getCenter to this one
         enemy.getTopLeft = () => this.getTopLeft(); // re-direct any references towards the enemy's getTopLeft to this one
         enemy.getFacing = () => this.getFacing();
+        enemy.isInView = () => this.isInView();
 
         this.maxHealth = health; 
         this.onDeath = onDeath;

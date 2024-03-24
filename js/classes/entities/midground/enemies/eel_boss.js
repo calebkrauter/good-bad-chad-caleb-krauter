@@ -10,7 +10,7 @@ class EelBoss {
      * @param {Vector} pos the position at which the EelBoss should start
      */
     constructor(pos) {
-        this.base = new EnemyBase(
+        this.base = new GroundEnemyBase(
             this, 
             pos, 
             EelBoss.SCALED_SIZE, 
@@ -18,7 +18,7 @@ class EelBoss {
             EelBoss.MAX_HEALTH, 
             EelBoss.PACE_DISTANCE, 
             () => this.handleDeath(),
-            EnemyBase.DEFENSIVE_STANCE
+            EnemyBase.AGGRESSIVE_STANCE
         );
 
         /** An associative array of the animations for this EelBoss. Arranged [facing][action]. */
@@ -56,12 +56,12 @@ class EelBoss {
 
     /** The maximum health of the EelBoss. */
     static get MAX_HEALTH() {
-        return 150;
+        return 200;
     };
 
     /** The distance the EelBoss will "pace" back and forth. */
     static get PACE_DISTANCE() {
-        return EelBoss.SCALED_SIZE.x * 2;
+        return EelBoss.SCALED_SIZE.x;
     };
 
     /** The number of seconds between attacks. */
@@ -76,7 +76,11 @@ class EelBoss {
 
     /** Number of seconds after the start of the attack animation when damage should be dealt. */
     static get DAMAGE_DELAY() {
-        return 0.6;
+        return 0.4;
+    }
+
+    static get ATTACK_DISTANCE() {
+        return EelBoss.SCALED_SIZE.x / 1.8;
     }
 
     /**
@@ -102,7 +106,7 @@ class EelBoss {
     update() {
         this.base.update();
 
-        if (!this.playingBossMusic && this.base.isInView()) {
+        if (!this.playingBossMusic && this.isInView()) {
             ASSET_MGR.playMusic(MUSIC.RIVER_BOSS.path, MUSIC.RIVER_BOSS.volume);
             this.playingBossMusic = true;
         }
@@ -120,8 +124,9 @@ class EelBoss {
             }
     
             // if Chad is close enough, bite him
-            if (this.base.chadDistance() < EelBoss.SCALED_SIZE.x) {
+            if (this.base.chadDistance() < EelBoss.ATTACK_DISTANCE) {
                 if (secondsSinceLastAttack > EelBoss.ATTACK_COOLDOWN) {
+                    console.log("initiating attack")
                     // if it's been long enough, start a new attack 
                     this.state = "pursue";
                     this.base.setTargetX(CHAD.getCenter().x);
@@ -134,6 +139,7 @@ class EelBoss {
                     // if we're at the proper point in our attack animation, deal damage
     
                     CHAD.takeDamage(EelBoss.ATTACK_DAMAGE);
+                    ASSET_MGR.playSFX(SFX.SNAKE_HISS.path, SFX.SNAKE_HISS.volume);
                     this.dealtDamage = true;
                 }
             }

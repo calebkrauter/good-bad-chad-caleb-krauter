@@ -185,7 +185,8 @@ const loadVillageMain = () => {
         ASSET_MGR.queueDownload(Decoration.DECORATIONS.trees.SPRUCE_1.SPRITESHEET);
 
 
-        ASSET_MGR.queueDownload(MUSIC.PEACEFUL_CHIPTUNE.path);
+        // ASSET_MGR.queueDownload(MUSIC.PEACEFUL_CHIPTUNE.path);
+        ASSET_MGR.queueDownload(MUSIC.CHAD_PLAYFUL_ADVENTURE.path);
         ASSET_MGR.queueDownload(MUSIC.VILLAGE_ATTACK.path);
 
         // NPCs
@@ -199,7 +200,8 @@ const loadVillageMain = () => {
 
     const addEntities = () => {
         setTimeout(() => {
-            ASSET_MGR.playMusic(MUSIC.PEACEFUL_CHIPTUNE.path, MUSIC.PEACEFUL_CHIPTUNE.volume);
+            ASSET_MGR.playMusic(MUSIC.CHAD_PLAYFUL_ADVENTURE.path, MUSIC.CHAD_PLAYFUL_ADVENTURE.volume);
+            // ASSET_MGR.playMusic(MUSIC.PEACEFUL_CHIPTUNE.path, MUSIC.PEACEFUL_CHIPTUNE.volume);
         }, 500);
 
         // let groundLevel = 18;
@@ -332,19 +334,19 @@ const loadVillageMain = () => {
         GAME.addEntity(new RuneDrop(Vector.blockToWorldSpace(new Vector(95, aboveGroundLevel - 3)), RuneDrop.WHITE, false));
         GAME.addEntity(new RuneDrop(Vector.blockToWorldSpace(new Vector(97, aboveGroundLevel - 2)), RuneDrop.WHITE, false));
 
-        GAME.addEntity(new OculiBot(Vector.blockToWorldSpace(
-            new Vector(65, aboveGroundLevel - 4)),
-            [new Vector(300, 100), new Vector(-300, -100), new Vector(0, 0)]
-        ));
+        // GAME.addEntity(new OculiBot(Vector.blockToWorldSpace(
+        //     new Vector(65, aboveGroundLevel - 4)),
+        //     [new Vector(300, 100), new Vector(-300, -100), new Vector(0, 0)]
+        // ));
 
-        GAME.addEntity(new OverseerBot(Vector.blockToWorldSpace(
-            new Vector(75, aboveGroundLevel - 3)),
-            [new Vector(300, 0), new Vector(-300, 0), new Vector(0, 0)]
-        ));
+        // GAME.addEntity(new OverseerBot(Vector.blockToWorldSpace(
+        //     new Vector(75, aboveGroundLevel - 3)),
+        //     [new Vector(300, 0), new Vector(-300, 0), new Vector(0, 0)]
+        // ));
 
-        GAME.addEntity(new DrillBot(Vector.blockToWorldSpace(
-            new Vector(65, aboveGroundLevel - 5))
-        ));
+        // GAME.addEntity(new DrillBot(Vector.blockToWorldSpace(
+        //     new Vector(65, aboveGroundLevel - 5))
+        // ));
 
         LoadingAnimation.stop();
     };
@@ -397,7 +399,8 @@ const loadHillDownFromMain = () => {
         ASSET_MGR.queueDownload(Bunny.SPRITESHEET);
         ASSET_MGR.queueDownload(Snake.SPRITESHEET);
 
-        ASSET_MGR.queueDownload(MUSIC.CHAD_PLAYFUL_ADVENTURE.path);
+        // ASSET_MGR.queueDownload(MUSIC.CHAD_PLAYFUL_ADVENTURE.path);
+        ASSET_MGR.queueDownload(MUSIC.PEACEFUL_CHIPTUNE.path);
     };
 
     const addEntities = () => {
@@ -534,7 +537,8 @@ const loadHillDownFromMain = () => {
     };
 
     setTimeout(() => {
-        ASSET_MGR.playMusic(MUSIC.CHAD_PLAYFUL_ADVENTURE.path, MUSIC.CHAD_PLAYFUL_ADVENTURE.volume);
+        // ASSET_MGR.playMusic(MUSIC.CHAD_PLAYFUL_ADVENTURE.path, MUSIC.CHAD_PLAYFUL_ADVENTURE.volume);
+        ASSET_MGR.playMusic(MUSIC.PEACEFUL_CHIPTUNE.path, MUSIC.PEACEFUL_CHIPTUNE.volume);
     }, 500);
 
     queueAssets();

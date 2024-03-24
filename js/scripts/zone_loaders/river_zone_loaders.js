@@ -77,7 +77,7 @@ const loadRiver = () => {
     GAME.addEntity(new AmmoDrop(
         Vector.blockToWorldSpace(new Vector(6, 27)),
         AmmoDrop.WATER_BALLOON,
-        10,
+        5,
         false
     ));
 
@@ -85,7 +85,7 @@ const loadRiver = () => {
     GAME.addEntity(new AmmoDrop(
         Vector.blockToWorldSpace(new Vector(32, 27)),
         AmmoDrop.WATER_BALLOON,
-        20,
+        10,
         false
     ));
 
@@ -93,7 +93,8 @@ const loadRiver = () => {
     GAME.addEntity(new Eel(Vector.blockToWorldSpace(new Vector(20.5, 29)), 700, 30, 10));
     GAME.addEntity(new Eel(Vector.blockToWorldSpace(new Vector(25.5, 29)), 700, -30, 12));
 
-    GAME.addEntity(new EelBoss(Vector.blockToWorldSpace(new Vector(140, 10))));
+    GAME.addEntity(new EelBoss(Vector.blockToWorldSpace(new Vector(145, 18))));
+
 
 
     setTimeout(() => {

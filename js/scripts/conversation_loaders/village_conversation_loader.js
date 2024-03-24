@@ -150,8 +150,8 @@ const blacksmithConversationLoader = () => {
             new DialogBubble(bs, 'Okay.'),
             // 3
             new DecisionBubble('Blacksmith', 'Okay', [
-                new Choice("Rock ammo (25 for 50 runes)", () => {
-                    return INVENTORY.runes >= 50 ? 4 : 9;
+                new Choice("Rock ammo (25 for 25 runes)", () => {
+                    return INVENTORY.runes >= 25 ? 4 : 9;
                 }),
                 new Choice("Rock ammo (100 for 100 runes)", () => {
                     return INVENTORY.runes >= 100 ? 5 : 9;

@@ -1,4 +1,6 @@
 /** 
+ * Overseer Bots are flying enemies that shoot missiles and sonic waves at Chad.
+ * They have a shorter attack range than Oculi Bots, but have more health.
  * 
  * @author Nathan Hinthorne
  */
