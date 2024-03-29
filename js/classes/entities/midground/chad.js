@@ -695,9 +695,9 @@ class Chad {
         }
 
         // Step 7: Check general zone conditions
-        if (this.pos.y > Vector.blockToWorldSpace(new Vector(0, 75)).y) {
-            this.takeDamage(this.maxHealth);
-        }
+        // if (this.pos.y > Vector.blockToWorldSpace(new Vector(0, 75)).y) {
+        //     this.takeDamage(this.maxHealth);
+        // }
     };
 
     /** Draw Chad on the canvas. */

@@ -174,7 +174,7 @@ const SFX = {
  */
 const MUSIC = {
     // Misc.
-    PEACEFUL_CHIPTUNE: { path: "./music/peaceful_chiptune.mp3", volume: 0.1 }, // testing music
+    PEACEFUL_CHIPTUNE: { path: "./music/peaceful_chiptune.mp3", volume: 0.06 }, // testing music
     HIGH_ENERGY: { path: "./music/high_energy_sample.wav", volume: 0.1 },
     VICTORY: { path: "./music/victory_sample.wav", volume: 0.1 },
     UPBEAT_CHIPTUNE_2: { path: "./music/upbeat_chiptune_2.mp3", volume: 0.1 },
