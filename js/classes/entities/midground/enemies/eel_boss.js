@@ -143,7 +143,7 @@ class EelBoss {
                     this.dealtDamage = true;
                 }
             }
-        } else if (deathAnim.currentFrame() === deathAnim.frameCount - 1) {
+        } else if (deathAnim.currentFrame === deathAnim.frameCount - 1) {
             this.removeFromWorld = true;
         }
         

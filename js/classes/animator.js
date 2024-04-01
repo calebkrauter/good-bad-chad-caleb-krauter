@@ -70,7 +70,6 @@ class Animator {
             pos.x, pos.y,
             this.size.x * scale.x, this.size.y * scale.y);
     };
-    
 
     /**
      * @returns True if this animation has been completed; else false.
