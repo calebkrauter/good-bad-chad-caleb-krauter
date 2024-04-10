@@ -29,6 +29,21 @@ const loadEndZone = () => {
         ASSET_MGR.queueDownload(Decoration.DECORATIONS.trees.MAGIC_TREE_4.SPRITESHEET);
 
         ASSET_MGR.queueDownload(Precipitation.SPRITESHEET);
+
+        ASSET_MGR.queueDownload(Slime.SPRITESHEET);
+        ASSET_MGR.queueDownload(OverseerBot.SPRITESHEET);
+        ASSET_MGR.queueDownload(DrillBot.SPRITESHEET);
+        ASSET_MGR.queueDownload(OculiBot.SPRITESHEET);
+
+        ASSET_MGR.queueDownload(SFX.SLIME_ATTACK.path);
+        ASSET_MGR.queueDownload(SFX.ROBOT_DEATH1.path);
+        ASSET_MGR.queueDownload(SFX.ROBOT_DEATH2.path);
+        ASSET_MGR.queueDownload(SFX.ROBOT_DEATH3.path);
+        ASSET_MGR.queueDownload(SFX.PORTAL_IDLE.path);
+        ASSET_MGR.queueDownload(SFX.PORTAL_ACTIVATE.path);
+
+
+
         // NPCs
         ASSET_MGR.queueDownload(BlackSmith.SPRITESHEET);
         ASSET_MGR.queueDownload(Mayor.SPRITESHEET);
@@ -134,42 +149,52 @@ const loadEndZone = () => {
 
         // create portals
 
-        // const portal1Coordinates = new Vector(63, 27);
-        // const portal1 = new Portal(portal1Coordinates, Portal.YELLOW);
-        // GAME.addEntity(portal1);
+        const portal1Coordinates = new Vector(72, 27);
+        const portal1 = new Portal(portal1Coordinates, Portal.YELLOW);
+        GAME.addEntity(portal1);
         // if (STORY.botsKilled < 20) {
-        //     portal1.fillWithEnemies([new DrillBot(Vector.blockToWorldSpace(portal1Coordinates)),
-        //     new DrillBot(Vector.blockToWorldSpace(portal1Coordinates)),
-        //     new DrillBot(Vector.blockToWorldSpace(portal1Coordinates)),
-        //     new DrillBot(Vector.blockToWorldSpace(portal1Coordinates)),
-        //     new DrillBot(Vector.blockToWorldSpace(portal1Coordinates)),
-        //     new DrillBot(Vector.blockToWorldSpace(portal1Coordinates)),
-        //     new DrillBot(Vector.blockToWorldSpace(portal1Coordinates)),
-        //     new DrillBot(Vector.blockToWorldSpace(portal1Coordinates)),
-        //     new DrillBot(Vector.blockToWorldSpace(portal1Coordinates)),
-        //     new DrillBot(Vector.blockToWorldSpace(portal1Coordinates)),
-        //     ]);
+            portal1.fillWithEnemies([
+            new OverseerBot(Vector.blockToWorldSpace(portal1Coordinates), FlyingEnemyBase.UP_AND_DOWN),
+            new DrillBot(Vector.blockToWorldSpace(portal1Coordinates)),
+            new OculiBot(Vector.blockToWorldSpace(portal1Coordinates), FlyingEnemyBase.ZIG_ZAG),
+            new DrillBot(Vector.blockToWorldSpace(portal1Coordinates)),
+            new OculiBot(Vector.blockToWorldSpace(portal1Coordinates), FlyingEnemyBase.LEFT_AND_RIGHT),
+            new OverseerBot(Vector.blockToWorldSpace(portal1Coordinates), FlyingEnemyBase.UP_AND_DOWN),
+            new DrillBot(Vector.blockToWorldSpace(portal1Coordinates)),
+            new OverseerBot(Vector.blockToWorldSpace(portal1Coordinates), FlyingEnemyBase.CIRCLE),
+            new DrillBot(Vector.blockToWorldSpace(portal1Coordinates)),
+            new OculiBot(Vector.blockToWorldSpace(portal1Coordinates), FlyingEnemyBase.SINE_WAVE),
+            ]);
         // }
 
-        // const portal2Coordinates = new Vector(70, 23);
-        // const portal2 = new Portal(portal2Coordinates, Portal.YELLOW);
-        // GAME.addEntity(portal2);
+        const portal2Coordinates = new Vector(83, 24);
+        const portal2 = new Portal(portal2Coordinates, Portal.YELLOW);
+        GAME.addEntity(portal2);
         // if (STORY.botsKilled < 20) {
-        //     portal2.fillWithEnemies([new DrillBot(Vector.blockToWorldSpace(portal2Coordinates)),
-        //     new DrillBot(Vector.blockToWorldSpace(portal2Coordinates)),
-        //     new DrillBot(Vector.blockToWorldSpace(portal2Coordinates)),
-        //     new DrillBot(Vector.blockToWorldSpace(portal2Coordinates)),
-        //     new DrillBot(Vector.blockToWorldSpace(portal2Coordinates)),
-        //     new DrillBot(Vector.blockToWorldSpace(portal2Coordinates)),
-        //     new DrillBot(Vector.blockToWorldSpace(portal2Coordinates)),
-        //     new DrillBot(Vector.blockToWorldSpace(portal2Coordinates)),
-        //     new DrillBot(Vector.blockToWorldSpace(portal2Coordinates)),
-        //     new DrillBot(Vector.blockToWorldSpace(portal2Coordinates)),
-        //     ]);
+            portal2.fillWithEnemies([
+            new OculiBot(Vector.blockToWorldSpace(portal2Coordinates), FlyingEnemyBase.UP_AND_DOWN),
+            new DrillBot(Vector.blockToWorldSpace(portal2Coordinates)),
+            new OverseerBot(Vector.blockToWorldSpace(portal2Coordinates), FlyingEnemyBase.LEFT_AND_RIGHT),
+            new OculiBot(Vector.blockToWorldSpace(portal2Coordinates), FlyingEnemyBase.CIRCLE),
+            new OculiBot(Vector.blockToWorldSpace(portal2Coordinates), FlyingEnemyBase.UP_AND_DOWN),
+            new OverseerBot(Vector.blockToWorldSpace(portal2Coordinates), FlyingEnemyBase.LEFT_AND_RIGHT),
+            new DrillBot(Vector.blockToWorldSpace(portal2Coordinates)),
+            new OverseerBot(Vector.blockToWorldSpace(portal2Coordinates), FlyingEnemyBase.SINE_WAVE),
+            new OculiBot(Vector.blockToWorldSpace(portal2Coordinates), FlyingEnemyBase.CIRCLE),
+            new DrillBot(Vector.blockToWorldSpace(portal2Coordinates)),
+            ]);
         // }
+
+        // add evil slimes
+        GAME.addEntity(new Slime(Vector.blockToWorldSpace(new Vector(22, 27)), Slime.EVIL));
+        GAME.addEntity(new Slime(Vector.blockToWorldSpace(new Vector(30, 27)), Slime.EVIL));
+        GAME.addEntity(new Slime(Vector.blockToWorldSpace(new Vector(50, 30)), Slime.EVIL));
+        GAME.addEntity(new Slime(Vector.blockToWorldSpace(new Vector(60, 30)), Slime.EVIL));
+        GAME.addEntity(new Slime(Vector.blockToWorldSpace(new Vector(65, 30)), Slime.EVIL));
+
         GAME.addEntity(new Wizard(Vector.blockToWorldSpace(new Vector(85, 32)),
             null));
-        GAME.addEntity(new MamaChad(Vector.blockToWorldSpace(new Vector(82, 25))));
+        GAME.addEntity(new MamaChad(Vector.blockToWorldSpace(new Vector(93.5, 27))));
         ASSET_MGR.playMusic(MUSIC.END.path, MUSIC.END.volume);
 
         setTimeout(() => {

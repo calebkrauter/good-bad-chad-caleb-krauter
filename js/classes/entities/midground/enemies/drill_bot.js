@@ -177,7 +177,7 @@ class DrillBot {
                 }
             }
         } else {
-            if (deathAnim.currentFrame() === deathAnim.frameCount - 1) {
+            if (deathAnim.currentFrame === deathAnim.frameCount - 1) {
                 this.removeFromWorld = true;
                 if (STORY.botsKilled) {
                     STORY.botsKilled++;

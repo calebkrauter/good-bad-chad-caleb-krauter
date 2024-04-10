@@ -25,7 +25,7 @@ class RuneDrop {
         this.boundingBox = new BoundingBox(this.pos, this.scaledSize);
         this.lastBoundingBox = this.boundingBox;
 
-        this.animation = new Animator(RuneDrop.SPRITESHEET, 
+        this.animation = new Animator(RuneDrop.SPRITESHEET,
             new Vector(RuneDrop.SIZE.x, type * RuneDrop.SIZE.y),
             RuneDrop.SIZE, 8, 0.15);
     }
@@ -35,7 +35,7 @@ class RuneDrop {
         const center = Vector.add(this.pos, Vector.divide(this.scaledSize, 2));
         GAME.addEntity(new ParticleEffect(center, ParticleEffect.RUNE_PICKUP));
         ASSET_MGR.playSFX(SFX.COIN_COLLECT.path, SFX.COIN_COLLECT.volume);
-        
+
         this.removeFromWorld = true;
 
         //TODO send ammo to inventory
@@ -68,7 +68,7 @@ class RuneDrop {
         this.animation.drawFrame(Vector.worldToCanvasSpace(this.pos), this.scale);
 
         CTX.fillStyle = "white";
-        CTX.font = ItemLabel.TEXT_SIZE + "px vt323";
+        CTX.font = RuneDrop.TEXT_SIZE + "px vt323";
 
         const text = "$" + this.amount;
         const textWidth = CTX.measureText(text).width;
@@ -112,6 +112,10 @@ class RuneDrop {
 
     static get SIZE() {
         return new Vector(36, 36);
+    }
+
+    static get TEXT_SIZE() {
+        return 32;
     }
 
     //map for type of rune to value

@@ -306,7 +306,7 @@ class StatusEffect {
     /**
      * Remove all status effects from the entity.
      */
-    removeAll() {
+    clearEffects() {
         this.remove(StatusEffect.INVINCIBLE);
         this.remove(StatusEffect.STRONG);
         this.remove(StatusEffect.FAST);

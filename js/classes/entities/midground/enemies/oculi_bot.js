@@ -1,4 +1,5 @@
 /** 
+ * Oculi Bots are flying enemies that shoot lasers at Chad.
  * 
  * @author Nathan Hinthorne
  */

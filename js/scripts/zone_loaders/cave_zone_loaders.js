@@ -366,7 +366,14 @@ const loadCave2 = () => {
 
         TilemapInterpreter.setTilemap(cave_2_tilemap);
 
-        let botPortal = new Portal(new Vector(82, 44), Portal.YELLOW);
+        const portal2Coordinates = new Vector(82, 44);
+        let botPortal = new Portal(portal2Coordinates, Portal.YELLOW);
+        botPortal.fillWithEnemies([
+            new DrillBot(Vector.blockToWorldSpace(portal2Coordinates)),
+            new OverseerBot(Vector.blockToWorldSpace(portal2Coordinates), FlyingEnemyBase.LEFT_AND_RIGHT),
+            new OverseerBot(Vector.blockToWorldSpace(portal2Coordinates), FlyingEnemyBase.UP_AND_DOWN),
+            new OculiBot(Vector.blockToWorldSpace(portal2Coordinates), FlyingEnemyBase.CIRCLE),
+            ]);
         GAME.addEntity(botPortal);
         let transportPortal = new TransportPortal(new Vector(94, 44), Portal.PURPLE);
         GAME.addEntity(transportPortal);

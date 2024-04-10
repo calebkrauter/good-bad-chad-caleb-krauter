@@ -14,11 +14,13 @@
 
     <!-- Scripts containing info/functions for classes. -->
     <script type="text/javascript" src="./js/scripts/util.js"></script>
+    
     <!-- Scripts containing dialog-building methods. -->
     <script type="text/javascript" src="./js/scripts/conversation_loaders/main_conversation_loader.js"></script>
     <script type="text/javascript" src="./js/scripts/conversation_loaders/playground_conversation_loaders.js"></script>
     <script type="text/javascript" src="./js/scripts/conversation_loaders/village_conversation_loader.js"></script>
     <script type="text/javascript" src="./js/scripts/conversation_loaders/end_conversation_loader.js"></script>
+
     <!-- Scripts containing Zone-loading functions: -->
     <script type="text/javascript" src="./js/scripts/zone_loaders/cave_zone_loaders.js"></script>
     <script type="text/javascript" src="./js/scripts/zone_loaders/end_zone_loader.js"></script>
@@ -59,17 +61,20 @@
     <script type="text/javascript" src="./js/classes/camera.js"></script>
     <script type="text/javascript" src="./js/classes/game_engine.js"></script>
     <script type="text/javascript" src="./js/classes/inventory.js"></script>
+    <script type="text/javascript" src="./js/classes/physics_component.js"></script>
     <script type="text/javascript" src="./js/classes/status_effect.js"></script>
     <script type="text/javascript" src="./js/classes/timer.js"></script>
     <script type="text/javascript" src="./js/classes/vector.js"></script>
     <script type="text/javascript" src="./js/classes/zone.js"></script>
+
 
     <!-- Entities: -->
     <!-- Background: -->
     <script type="text/javascript" src="./js/classes/entities/background/decoration.js"></script>
     <script type="text/javascript" src="./js/classes/entities/background/sun.js"></script>
 
-    <script type="text/javascript" src="./js/classes/entities/background/village/bird.js"></script>
+    <script type="text/javascript" src="./js/classes/entities/background/bird.js"></script>
+    
     <!-- Midground: -->
     <script type="text/javascript" src="./js/classes/entities/midground/block.js"></script>
     <script type="text/javascript" src="./js/classes/entities/midground/liquid_block.js"></script>
@@ -78,10 +83,12 @@
     <script type="text/javascript" src="./js/classes/entities/midground/transport_portal.js"></script>
     <script type="text/javascript" src="./js/classes/entities/midground/portal.js"></script>
     <script type="text/javascript" src="./js/classes/entities/midground/particle_effect.js"></script>
+
     <!-- Collectables: -->
     <script type="text/javascript" src="./js/classes/entities/midground/drops/ammo_drop.js"></script>
     <script type="text/javascript" src="./js/classes/entities/midground/drops/food_drop.js"></script>
     <script type="text/javascript" src="./js/classes/entities/midground/drops/rune_drop.js"></script>
+
     <!-- Enemies: -->
     <script type="text/javascript" src="./js/classes/entities/midground/enemies/enemy_base.js"></script>
     <script type="text/javascript" src="./js/classes/entities/midground/enemies/flying_enemy_base.js"></script>
@@ -108,13 +115,13 @@
     <script type="text/javascript" src="./js/classes/entities/midground/npc/lava/mine_boss.js"></script>
     <script type="text/javascript" src="./js/classes/entities/midground/npc/traveling_merchant.js"></script>
 
-
     <script type="text/javascript" src="./js/classes/entities/midground/npc/village/blacksmith.js"></script>
     <script type="text/javascript" src="./js/classes/entities/midground/npc/village/mama_chad.js"></script>
     <script type="text/javascript" src="./js/classes/entities/midground/npc/village/mayor.js"></script>
     <script type="text/javascript" src="./js/classes/entities/midground/npc/village/miner.js"></script>
 
     <script type="text/javascript" src="./js/classes/entities/midground/npc/village/papa_chad.js"></script>
+
     <!-- Weapons: -->
     <script type="text/javascript" src="./js/classes/entities/midground/weapon/projectile_factory.js"></script>
     <script type="text/javascript" src="./js/classes/entities/midground/weapon/projectile_base.js"></script>
@@ -130,22 +137,23 @@
     <script type="text/javascript" src="./js/classes/entities/midground/weapon/water_balloon.js"></script>
     <script type="text/javascript" src="./js/classes/entities/midground/weapon/slingshot.js"></script>
     <script type="text/javascript" src="./js/classes/entities/midground/weapon/sword.js"></script>
+
     <!-- Foreground: -->
-    <script type="text/javascript" src="./js/classes/entities/foreground/ammo_item.js"></script>
-    <script type="text/javascript" src="./js/classes/entities/foreground/dash_cooldown.js"></script>
-    <script type="text/javascript" src="./js/classes/entities/foreground/food_item.js"></script>
-    <script type="text/javascript" src="./js/classes/entities/foreground/health_bar.js"></script>
-    <script type="text/javascript" src="./js/classes/entities/foreground/loading_animation.js"></script>
     <script type="text/javascript" src="./js/classes/entities/foreground/overhead_icon.js"></script>
     <script type="text/javascript" src="./js/classes/entities/foreground/precipitation.js"></script>
     <script type="text/javascript" src="./js/classes/entities/foreground/weather_system.js"></script>
-
+    
     <!-- User Interface -->
-    <script type="text/javascript" src="./js/classes/entities/foreground/ui/button.js"></script>
-    <script type="text/javascript" src="./js/classes/entities/foreground/ui/controls.js"></script>
-    <script type="text/javascript" src="./js/classes/entities/foreground/ui/death_screen.js"></script>
-    <script type="text/javascript" src="./js/classes/entities/foreground/ui/hud.js"></script>
-    <script type="text/javascript" src="./js/classes/entities/foreground/ui/start_menu.js"></script>
+    <script type="text/javascript" src="./js/classes/entities/ui_ground/ammo_item.js"></script>
+    <script type="text/javascript" src="./js/classes/entities/ui_ground/dash_cooldown.js"></script>
+    <script type="text/javascript" src="./js/classes/entities/ui_ground/food_item.js"></script>
+    <script type="text/javascript" src="./js/classes/entities/ui_ground/health_bar.js"></script>
+    <script type="text/javascript" src="./js/classes/entities/ui_ground/loading_animation.js"></script>
+    <script type="text/javascript" src="./js/classes/entities/ui_ground/button.js"></script>
+    <script type="text/javascript" src="./js/classes/entities/ui_ground/controls.js"></script>
+    <script type="text/javascript" src="./js/classes/entities/ui_ground/death_screen.js"></script>
+    <script type="text/javascript" src="./js/classes/entities/ui_ground/hud.js"></script>
+    <script type="text/javascript" src="./js/classes/entities/ui_ground/start_menu.js"></script>
 
     <!-- Dialog: -->
     <script type="text/javascript" src="./js/classes/entities/foreground/dialog/conversation.js"></script>

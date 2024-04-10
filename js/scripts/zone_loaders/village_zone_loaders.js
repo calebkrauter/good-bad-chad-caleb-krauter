@@ -106,7 +106,7 @@ const loadVillageField = () => {
 
     if (STORY.invitedHunting) {
         GAME.addEntity(new PapaChad(
-            new Vector(ZONE.MAX_PT.x - 2 * PapaChad.SCALED_SIZE.x, ZONE.MAX_PT.y - 12 * Block.SCALED_SIZE),
+            new Vector(ZONE.MAX_PT.x - 2 * PapaChad.SCALED_SIZE.x, ZONE.MAX_PT.y - 14 * Block.SCALED_SIZE),
             new Conversation(getAllConversationArrays().village.papaChad.huntingInstruction)
         ));
     }
@@ -185,7 +185,8 @@ const loadVillageMain = () => {
         ASSET_MGR.queueDownload(Decoration.DECORATIONS.trees.SPRUCE_1.SPRITESHEET);
 
 
-        ASSET_MGR.queueDownload(MUSIC.PEACEFUL_CHIPTUNE.path);
+        // ASSET_MGR.queueDownload(MUSIC.PEACEFUL_CHIPTUNE.path);
+        ASSET_MGR.queueDownload(MUSIC.CHAD_PLAYFUL_ADVENTURE.path);
         ASSET_MGR.queueDownload(MUSIC.VILLAGE_ATTACK.path);
 
         // NPCs
@@ -198,10 +199,6 @@ const loadVillageMain = () => {
     };
 
     const addEntities = () => {
-        setTimeout(() => {
-            ASSET_MGR.playMusic(MUSIC.PEACEFUL_CHIPTUNE.path, MUSIC.PEACEFUL_CHIPTUNE.volume);
-        }, 500);
-
         // let groundLevel = 18;
         let aboveGroundLevel = 17;
         // let skyHeight = 14;
@@ -277,6 +274,11 @@ const loadVillageMain = () => {
         */
         let weather = "warm";
         if (!STORY.tutorialComplete) {
+            setTimeout(() => {
+                ASSET_MGR.playMusic(MUSIC.CHAD_PLAYFUL_ADVENTURE.path, MUSIC.CHAD_PLAYFUL_ADVENTURE.volume);
+                // ASSET_MGR.playMusic(MUSIC.PEACEFUL_CHIPTUNE.path, MUSIC.PEACEFUL_CHIPTUNE.volume);
+            }, 500);
+
             // NPCs
             const blockPosPapa = new Vector(33, chadOnGround);
             const blockPosBlackSmith = new Vector(17, chadOnGround);
@@ -293,6 +295,12 @@ const loadVillageMain = () => {
             GAME.addEntity(new Mayor(Vector.blockToWorldSpace(blockPosMayor), new Conversation(getAllConversationArrays().village.mayor.hopefulGreeting)), 0);
             GAME.addEntity(idleMama);
         } else {
+            setTimeout(() => {
+                ASSET_MGR.playMusic(MUSIC.VILLAGE_ATTACK.path, MUSIC.VILLAGE_ATTACK.volume);
+                // ASSET_MGR.playMusic(MUSIC.PEACEFUL_CHIPTUNE.path, MUSIC.PEACEFUL_CHIPTUNE.volume);
+            }, 500);
+
+            // wizard has appeared, mama chad is trapped.
             const blockPosTrappedMama = new Vector(65, chadOnGround + 1);
             const blockPosWizard = new Vector(63, chadOnGround);
             GAME.addEntity(new MamaChad(Vector.blockToWorldSpace(blockPosTrappedMama)));
@@ -332,19 +340,19 @@ const loadVillageMain = () => {
         GAME.addEntity(new RuneDrop(Vector.blockToWorldSpace(new Vector(95, aboveGroundLevel - 3)), RuneDrop.WHITE, false));
         GAME.addEntity(new RuneDrop(Vector.blockToWorldSpace(new Vector(97, aboveGroundLevel - 2)), RuneDrop.WHITE, false));
 
-        GAME.addEntity(new OculiBot(Vector.blockToWorldSpace(
-            new Vector(65, aboveGroundLevel - 4)),
-            [new Vector(300, 100), new Vector(-300, -100), new Vector(0, 0)]
-        ));
+        // GAME.addEntity(new OculiBot(Vector.blockToWorldSpace(
+        //     new Vector(65, aboveGroundLevel - 4)),
+        //     [new Vector(300, 100), new Vector(-300, -100), new Vector(0, 0)]
+        // ));
 
-        GAME.addEntity(new OverseerBot(Vector.blockToWorldSpace(
-            new Vector(75, aboveGroundLevel - 3)),
-            [new Vector(300, 0), new Vector(-300, 0), new Vector(0, 0)]
-        ));
+        // GAME.addEntity(new OverseerBot(Vector.blockToWorldSpace(
+        //     new Vector(75, aboveGroundLevel - 3)),
+        //     [new Vector(300, 0), new Vector(-300, 0), new Vector(0, 0)]
+        // ));
 
-        GAME.addEntity(new DrillBot(Vector.blockToWorldSpace(
-            new Vector(65, aboveGroundLevel - 5))
-        ));
+        // GAME.addEntity(new DrillBot(Vector.blockToWorldSpace(
+        //     new Vector(65, aboveGroundLevel - 5))
+        // ));
 
         LoadingAnimation.stop();
     };
@@ -397,7 +405,8 @@ const loadHillDownFromMain = () => {
         ASSET_MGR.queueDownload(Bunny.SPRITESHEET);
         ASSET_MGR.queueDownload(Snake.SPRITESHEET);
 
-        ASSET_MGR.queueDownload(MUSIC.CHAD_PLAYFUL_ADVENTURE.path);
+        // ASSET_MGR.queueDownload(MUSIC.CHAD_PLAYFUL_ADVENTURE.path);
+        ASSET_MGR.queueDownload(MUSIC.PEACEFUL_CHIPTUNE.path);
     };
 
     const addEntities = () => {
@@ -534,7 +543,8 @@ const loadHillDownFromMain = () => {
     };
 
     setTimeout(() => {
-        ASSET_MGR.playMusic(MUSIC.CHAD_PLAYFUL_ADVENTURE.path, MUSIC.CHAD_PLAYFUL_ADVENTURE.volume);
+        // ASSET_MGR.playMusic(MUSIC.CHAD_PLAYFUL_ADVENTURE.path, MUSIC.CHAD_PLAYFUL_ADVENTURE.volume);
+        ASSET_MGR.playMusic(MUSIC.PEACEFUL_CHIPTUNE.path, MUSIC.PEACEFUL_CHIPTUNE.volume);
     }, 500);
 
     queueAssets();
