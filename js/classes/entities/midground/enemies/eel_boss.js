@@ -11,12 +11,12 @@ class EelBoss {
      */
     constructor(pos) {
         this.base = new GroundEnemyBase(
-            this, 
-            pos, 
-            EelBoss.SCALED_SIZE, 
-            EelBoss.SPEED, 
-            EelBoss.MAX_HEALTH, 
-            EelBoss.PACE_DISTANCE, 
+            this,
+            pos,
+            EelBoss.SCALED_SIZE,
+            EelBoss.SPEED,
+            EelBoss.MAX_HEALTH,
+            EelBoss.PACE_DISTANCE,
             () => this.handleDeath(),
             EnemyBase.AGGRESSIVE_STANCE
         );
@@ -101,7 +101,7 @@ class EelBoss {
 
         ASSET_MGR.stopAudio(MUSIC.RIVER_BOSS.path);
     }
-    
+
     /** Change what the EelBoss is doing and where it is. */
     update() {
         this.base.update();
@@ -117,16 +117,15 @@ class EelBoss {
             const secondsSinceLastAttack = Date.now() / 1000 - this.lastAttack;
 
             // if we've finished our current attack, change action to idle
-            if (this.action === "attacking" 
+            if (this.action === "attacking"
                 && this.animations[this.base.getFacing()]["attacking"].totalTime < secondsSinceLastAttack) {
-                    
+
                 this.action = "idle";
             }
-    
+
             // if Chad is close enough, bite him
             if (this.base.chadDistance() < EelBoss.ATTACK_DISTANCE) {
                 if (secondsSinceLastAttack > EelBoss.ATTACK_COOLDOWN) {
-                    console.log("initiating attack")
                     // if it's been long enough, start a new attack 
                     this.state = "pursue";
                     this.base.setTargetX(CHAD.getCenter().x);
@@ -134,10 +133,10 @@ class EelBoss {
                     this.action = "attacking";
                     this.lastAttack = Date.now() / 1000;
                     this.dealtDamage = false;
-                } else if (this.action === "attacking" 
+                } else if (this.action === "attacking"
                     && secondsSinceLastAttack > EelBoss.DAMAGE_DELAY && !this.dealtDamage) {
                     // if we're at the proper point in our attack animation, deal damage
-    
+
                     CHAD.takeDamage(EelBoss.ATTACK_DAMAGE);
                     ASSET_MGR.playSFX(SFX.SNAKE_HISS.path, SFX.SNAKE_HISS.volume);
                     this.dealtDamage = true;
@@ -146,7 +145,7 @@ class EelBoss {
         } else if (deathAnim.currentFrame === deathAnim.frameCount - 1) {
             this.removeFromWorld = true;
         }
-        
+
 
     };
 
@@ -170,19 +169,19 @@ class EelBoss {
             new Vector(0, EelBoss.SIZE.y),
             EelBoss.SIZE,
             1, 1);
-        
+
         // SLITHERING ANIMATIONS
         // (it takes him 1s to slither)
         this.animations["right"]["moving"] = new Animator(
             EelBoss.SPRITESHEET,
             new Vector(0, 0),
             EelBoss.SIZE,
-            9, 1/9);
+            9, 1 / 9);
         this.animations["left"]["moving"] = new Animator(
             EelBoss.SPRITESHEET,
             new Vector(0, EelBoss.SIZE.y),
             EelBoss.SIZE,
-            9, 1/9);
+            9, 1 / 9);
 
         // ATTACKING ANIMATIONS
         this.animations["right"]["attacking"] = new Animator(
@@ -201,12 +200,12 @@ class EelBoss {
             EelBoss.SPRITESHEET,
             new Vector(0, EelBoss.SIZE.y * 4),
             EelBoss.SIZE,
-            7, 1/14);
+            7, 1 / 14);
         this.animations["left"]["dying"] = new Animator(
             EelBoss.SPRITESHEET,
             new Vector(0, EelBoss.SIZE.y * 5),
             EelBoss.SIZE,
-            7, 1/14);
-        
+            7, 1 / 14);
+
     };
 };
