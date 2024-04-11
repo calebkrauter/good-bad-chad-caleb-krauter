@@ -149,7 +149,7 @@ class Slime {
                 CHAD.takeDamage(Slime.ATTACK_DAMAGE);
                 ASSET_MGR.playSFX(SFX.SLIME_ATTACK.path, SFX.SLIME_ATTACK.volume);
             }
-        } else if (deathAnim.currentFrame() === deathAnim.frameCount - 1) {
+        } else if (deathAnim.currentFrame === deathAnim.frameCount - 1) {
             this.removeFromWorld = true;
             if (STORY.slimesKilled) {
                 STORY.slimesKilled++;
