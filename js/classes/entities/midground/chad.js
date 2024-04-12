@@ -693,7 +693,11 @@ class Chad {
                 this.takeDamage(this.maxHealth);
             }
         }
-
+        if (ZONE.name === "End Fight Section") {
+            if (this.pos.y > Vector.blockToWorldSpace(new Vector(0, 75)).y) {
+                this.takeDamage(this.maxHealth);
+            }
+        }
         // Step 7: Check general zone conditions
         // if (this.pos.y > Vector.blockToWorldSpace(new Vector(0, 75)).y) {
         //     this.takeDamage(this.maxHealth);
