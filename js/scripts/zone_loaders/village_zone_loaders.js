@@ -142,8 +142,8 @@ const loadVillageField = () => {
     ));
 
     GAME.addEntity(new FoodDrop(
-        Vector.blockToWorldSpace(new Vector(5, aboveGroundLevel + 4), -1), 
-        FoodDrop.ROAST_TURKEY, 
+        Vector.blockToWorldSpace(new Vector(5, aboveGroundLevel + 4), -1),
+        FoodDrop.ROAST_TURKEY,
         false
     ));
 
@@ -274,10 +274,12 @@ const loadVillageMain = () => {
         */
         let weather = "warm";
         if (!STORY.tutorialComplete) {
-            setTimeout(() => {
-                ASSET_MGR.playMusic(MUSIC.CHAD_PLAYFUL_ADVENTURE.path, MUSIC.CHAD_PLAYFUL_ADVENTURE.volume);
-                // ASSET_MGR.playMusic(MUSIC.PEACEFUL_CHIPTUNE.path, MUSIC.PEACEFUL_CHIPTUNE.volume);
-            }, 500);
+            if (GAME.mode == GameEngine.GAMEPLAY_MODE) { // if we've already clicked the start button, but we re-entered the village.
+                setTimeout(() => {
+                    ASSET_MGR.playMusic(MUSIC.CHAD_PLAYFUL_ADVENTURE.path, MUSIC.CHAD_PLAYFUL_ADVENTURE.volume);
+                    // ASSET_MGR.playMusic(MUSIC.PEACEFUL_CHIPTUNE.path, MUSIC.PEACEFUL_CHIPTUNE.volume);
+                }, 500);
+            }
 
             // NPCs
             const blockPosPapa = new Vector(33, chadOnGround);
