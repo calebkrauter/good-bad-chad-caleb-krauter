@@ -100,7 +100,7 @@ const loadRiver = () => {
     setTimeout(() => {
         ASSET_MGR.playMusic(MUSIC.RUSHING_WATER.path, MUSIC.RUSHING_WATER.volume);
     }, 500);
-    
+
 
     // Set background color:
     BG_COLOR = COLORS.SKY_BLUE;

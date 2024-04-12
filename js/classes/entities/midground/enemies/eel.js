@@ -115,7 +115,7 @@ class Eel {
     getCenter() {
         return Vector.add(this.pos, new Vector(Eel.SCALED_SIZE.x / 2, Eel.SCALED_SIZE.y / 2));
     }
-    
+
     /** Change what the Eel is doing and where it is. */
     update() {
         this.targetX = CHAD.getCenter().x;
@@ -125,12 +125,12 @@ class Eel {
             const secondsSinceLastAttack = Date.now() / 1000 - this.lastAttack;
 
             // if we've finished our current attack, change action to idle
-            if (this.action === "attacking" 
+            if (this.action === "attacking"
                 && this.animations[this.getFacing()]["attacking"].totalTime < secondsSinceLastAttack) {
-                    
+
                 this.action = "idle";
             }
-    
+
             // if Chad is close enough, bite him
             if (this.chadDistance() < Eel.SCALED_SIZE.x / 2) {
                 if (secondsSinceLastAttack > Eel.ATTACK_COOLDOWN) {
@@ -140,10 +140,10 @@ class Eel {
                     this.animations[this.getFacing()]["attacking"].elapsedTime = 0;
                     this.lastAttack = Date.now() / 1000;
                     this.dealtDamage = false;
-                } else if (this.action === "attacking" 
+                } else if (this.action === "attacking"
                     && secondsSinceLastAttack > Eel.DAMAGE_DELAY && !this.dealtDamage) {
                     // if we're at the proper point in our attack animation, deal damage
-    
+
                     CHAD.takeDamage(Eel.ATTACK_DAMAGE);
                     this.dealtDamage = true;
                 }
@@ -152,7 +152,7 @@ class Eel {
 
         if (this.currentJumpHeight <= 0) {
             this.isJumping = true;
-        } 
+        }
 
         if (this.currentJumpHeight >= this.maxJumpHeight) {
             this.isJumping = false;
@@ -164,7 +164,7 @@ class Eel {
             // jump up
             this.pos = Vector.add(this.pos, new Vector(0, -this.speed * GAME.clockTick));
             this.currentJumpHeight += this.speed * GAME.clockTick;
-        } 
+        }
         else {
             // fall down
             this.pos = Vector.add(this.pos, new Vector(0, this.speed * GAME.clockTick));
@@ -193,19 +193,19 @@ class Eel {
             new Vector(0, Eel.SIZE.y),
             Eel.SIZE,
             1, 1);
-        
+
         // SLITHERING ANIMATIONS
         // (it takes him 1s to slither)
         this.animations["right"]["moving"] = new Animator(
             Eel.SPRITESHEET,
             new Vector(0, 0),
             Eel.SIZE,
-            9, 1/9);
+            9, 1 / 9);
         this.animations["left"]["moving"] = new Animator(
             Eel.SPRITESHEET,
             new Vector(0, Eel.SIZE.y),
             Eel.SIZE,
-            9, 1/9);
+            9, 1 / 9);
 
         // ATTACKING ANIMATIONS
         this.animations["right"]["attacking"] = new Animator(
@@ -224,12 +224,12 @@ class Eel {
             Eel.SPRITESHEET,
             new Vector(0, Eel.SIZE.y * 4),
             Eel.SIZE,
-            7, 1/14);
+            7, 1 / 14);
         this.animations["left"]["dying"] = new Animator(
             Eel.SPRITESHEET,
             new Vector(0, Eel.SIZE.y * 5),
             Eel.SIZE,
-            7, 1/14);
-        
+            7, 1 / 14);
+
     };
 };
