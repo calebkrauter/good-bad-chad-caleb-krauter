@@ -192,7 +192,7 @@ const loadEndZone = () => {
         GAME.addEntity(new Slime(Vector.blockToWorldSpace(new Vector(60, 30)), Slime.EVIL));
         GAME.addEntity(new Slime(Vector.blockToWorldSpace(new Vector(65, 30)), Slime.EVIL));
 
-        GAME.addEntity(new Wizard(Vector.blockToWorldSpace(new Vector(85, 32)),
+        GAME.addEntity(new Wizard(Vector.blockToWorldSpace(new Vector(87, 32)),
             null));
         GAME.addEntity(new MamaChad(Vector.blockToWorldSpace(new Vector(93.5, 27))));
         ASSET_MGR.playMusic(MUSIC.END.path, MUSIC.END.volume);
