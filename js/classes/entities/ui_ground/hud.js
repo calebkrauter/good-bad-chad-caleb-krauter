@@ -35,10 +35,8 @@ class Hud {
      * Switch the mouse icon to a pointer.
      */
     swapToPointer() {
-        // const pointerUnclicked = 'url(../sprites/pointer_unclicked.png) 10 4, auto';
-        // document.body.style.cursor = pointerUnclicked;
-        const crosshairUnclicked = 'url(../sprites/crosshair_unclicked.png) 16 16, auto';
-        document.body.style.cursor = crosshairUnclicked;
+        const pointerUnclicked = 'url(../sprites/pointer_unclicked.png) 10 4, auto';
+        document.body.style.cursor = pointerUnclicked;
     }
 
     /**
@@ -46,26 +44,26 @@ class Hud {
      */
     addMouseListeners() {
         document.body.addEventListener('mousedown', () => {
-            // if (GAME.running) {
-            const crosshairClicked = 'url(../sprites/crosshair_clicked.png) 16 16, auto';
-            document.body.style.cursor = crosshairClicked;
+            if (GAME.running) {
+                const crosshairClicked = 'url(../sprites/crosshair_clicked.png) 16 16, auto';
+                document.body.style.cursor = crosshairClicked;
 
-            // } else {
-            //     const pointerClicked = 'url(../sprites/pointer_clicked.png) 10 4, auto';
-            //     document.body.style.cursor = pointerClicked;
-            //     ASSET_MGR.playSFX(SFX.UI_SNAP.path, SFX.UI_SNAP.volume);
-            // }
+            } else {
+                const pointerClicked = 'url(../sprites/pointer_clicked.png) 10 4, auto';
+                document.body.style.cursor = pointerClicked;
+                ASSET_MGR.playSFX(SFX.UI_SNAP.path, SFX.UI_SNAP.volume);
+            }
         });
 
         document.body.addEventListener('mouseup', () => {
-            // if (GAME.running) {
-            const crosshairUnclicked = 'url(../sprites/crosshair_unclicked.png) 16 16, auto';
-            document.body.style.cursor = crosshairUnclicked;
+            if (GAME.running) {
+                const crosshairUnclicked = 'url(../sprites/crosshair_unclicked.png) 16 16, auto';
+                document.body.style.cursor = crosshairUnclicked;
 
-            // } else {
-            //     const pointerUnclicked = 'url(../sprites/pointer_unclicked.png) 10 4, auto';
-            //     document.body.style.cursor = pointerUnclicked;
-            // }
+            } else {
+                const pointerUnclicked = 'url(../sprites/pointer_unclicked.png) 10 4, auto';
+                document.body.style.cursor = pointerUnclicked;
+            }
         });
     }
 
