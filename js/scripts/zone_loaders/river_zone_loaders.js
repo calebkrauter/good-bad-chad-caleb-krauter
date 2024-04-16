@@ -1,7 +1,6 @@
 const loadRiver = () => {
     const queueAssets = () => {
 
-        // TODO don't forget to add in your water sprites.
         ASSET_MGR.queueDownload(Decoration.DECORATIONS.clouds.CLOUD_JUST_CLOUD.SPRITESHEET);
         ASSET_MGR.queueDownload(Decoration.DECORATIONS.clouds.CLOUD_BUSHY.SPRITESHEET);
         ASSET_MGR.queueDownload(Decoration.DECORATIONS.clouds.CLOUD_LANKY.SPRITESHEET);
@@ -100,7 +99,7 @@ const loadRiver = () => {
     setTimeout(() => {
         ASSET_MGR.playMusic(MUSIC.RUSHING_WATER.path, MUSIC.RUSHING_WATER.volume);
     }, 500);
-    
+
 
     // Set background color:
     BG_COLOR = COLORS.SKY_BLUE;
