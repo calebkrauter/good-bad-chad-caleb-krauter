@@ -26,6 +26,8 @@ class GroundEnemyBase {
         this.enemy = enemy;
         this.base = new EnemyBase(enemy, pos, scaledSize, speed, health, onDeath, () => this.handleDamage());
 
+        this.enemy.isGroundEnemy = true;
+
         enemy.state = "roam";
         enemy.action = "idle";
         enemy.maxRoamDistance = maxRoamDistance; // *
