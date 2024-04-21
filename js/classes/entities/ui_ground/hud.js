@@ -67,6 +67,51 @@ class Hud {
         });
     }
 
+    // /**
+    //  * Switch the mouse icon to a crosshair.
+    //  */
+    // swapToCrosshair() {
+    //     document.body.classList.remove('pointer-cursor');
+    //     document.body.classList.add('crosshair-cursor');
+    // }
+
+    // /**
+    //  * Switch the mouse icon to a pointer.
+    //  */
+    // swapToPointer() {
+    //     document.body.classList.remove('crosshair-cursor');
+    //     document.body.classList.add('pointer-cursor');
+    // }
+
+    // /**
+    //  * Add the mouse listeners for switching between pointers.
+    //  */
+    // addMouseListeners() {
+    //     document.body.addEventListener('mousedown', () => {
+    //         if (GAME.running) {
+    //             document.body.classList.remove('crosshair-cursor-unclicked');
+    //             document.body.classList.add('crosshair-cursor-clicked');
+    //         } else {
+    //             document.body.classList.remove('pointer-cursor-unclicked');
+    //             document.body.classList.add('pointer-cursor-clicked');
+    //             ASSET_MGR.playSFX(SFX.UI_SNAP.path, SFX.UI_SNAP.volume);
+    //         }
+    //     });
+
+    //     document.body.addEventListener('mouseup', () => {
+    //         if (GAME.running) {
+    //             document.body.classList.remove('crosshair-cursor-clicked');
+    //             document.body.classList.add('crosshair-cursor-unclicked');
+    //             console.log("game stopped")
+    //         } else {
+    //             document.body.classList.remove('pointer-cursor-clicked');
+    //             document.body.classList.add('pointer-cursor-unclicked');
+    //             console.log("game continue")
+
+    //         }
+    //     });
+    // }
+
     /**
      * Add a component to the HUD. Creates a field for the component and adds the component
      * to the game engine as an entity. This means that the component must have an update
